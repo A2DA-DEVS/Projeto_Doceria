@@ -1,48 +1,49 @@
 - usuario
 
 id                   numerico    auto_increment
-nome                 texto       255
-email                texto       255
-telefone             numerico    255
-username             texto       255
-Senha                texto       255
+nome                 texto       255    Requerido
+email                texto       255    Único, Requerido
+telefone             texto       255    
+nomeUsuário          texto       255    Único, Requerido
+senha                texto       255    Requerido
 
 ----------------------------------------------------------------------
 
 - cliente
 
 id          numerico    auto_increment
-nome        texto       255
-telefone    numerico    255
-email       texto       255
-endereco     ->         endereco.id
+nome        texto       255   Requerido
+cpf         texto       255   Único
+telefone    texto       255   Requerido, único  | Um dos dois tem que ser 
+email       texto       255   Requerido, único  | preenchido, ou um ou outro.
+endereco     ->         endereco.id   Requerido
 
 ----------------------------------------------------------------------
 
 - endereco
 
 id                   numerico      auto_increment
-rua                  texto         255
-numero da residencia numerico      255
-complemento          texto         255
-bairro               texto         255
-cep                  numerico      255
-cidade                 ->          cidade.id
+rua                  texto         255    Requerido
+numero da residencia numerico      255    Requerido
+complemento          texto         255    
+bairro               texto         255    Requerido
+cep                  numerico      255    
+cidade                 ->          cidade.id Requerido
 
 ----------------------------------------------------------------------
 
 - cidade
 
 id      numerico      auto_increment
-nome    texto         255
-estado   ->           estado.id
+nome    texto         255   Único, Requerido
+estado   ->           estado.id Requerido
 
 ----------------------------------------------------------------------
 
 - estado 
 
 id      numerico      auto_increment
-nome    texto         255
+nome    texto         255 Único, Requerido
 
 ----------------------------------------------------------------------
 
