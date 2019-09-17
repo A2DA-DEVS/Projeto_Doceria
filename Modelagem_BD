@@ -13,10 +13,10 @@ senha                texto       255    Requerido
 
 id          numerico    auto_increment
 nome        texto       255   Requerido
-cpf         texto       255   Único
-telefone    texto       255   Requerido, único  | Um dos dois tem que ser 
-email       texto       255   Requerido, único  | preenchido, ou um ou outro.
-endereco     ->         endereco.id   Requerido
+cpf         texto       255   Único, Requerido
+telefone    texto       255   Requerido 
+email       texto       255   Único  
+endereco_id     ->      endereco.id
 
 ----------------------------------------------------------------------
 
@@ -24,41 +24,46 @@ endereco     ->         endereco.id   Requerido
 
 id                   numerico      auto_increment
 rua                  texto         255    Requerido
-numero da residencia numerico      255    Requerido
+numeroResidencia     texto         255    Requerido
 complemento          texto         255    
 bairro               texto         255    Requerido
-cep                  numerico      255    
-cidade                 ->          cidade.id Requerido
-
-----------------------------------------------------------------------
-
-- cidade
-
-id      numerico      auto_increment
-nome    texto         255   Único, Requerido
-estado   ->           estado.id Requerido
-
-----------------------------------------------------------------------
-
-- estado 
-
-id      numerico      auto_increment
-nome    texto         255 Único, Requerido
+cep                  texto         255    
+cidade               texto         255   Requerido
+Estado               texto         255   Requerido
 
 ----------------------------------------------------------------------
 
 - pedido
 
 id                  numerico     auto_increment
-numero do pedido    texto        auto_increment
-data de criacao     texto        255    Requerido
-data hora entrega   texto        255    Requerido
+dataDeCriacao       Data/hora    255      Requerido
+dataEntrega         Data/hora    255    
 retirada            boolean      255    Requerido
-valor do pedido     numerico     255    Requerido
-forma de pagamento  boolean      255    Requerido
-status              boolean             Requerido
+valor do pedido     numerico     255   ???
+forma de pagamento  texto       255    Requerido
+status              texto             Requerido
 observacao          texto        1000   
-endereco entrega     ->          endereco.id    Requerido
+enderecoEntrega_id     ->         endereco.id    
 criado_por_id        ->          usuario.id     Requerido
-preparador_por_id    ->          usuario.id     Requerido
+preparador_por_id    ->          usuario.id
+itenPedido_id         ->         itenPedido.id
+
+- Produto
+
+id                   numerico    auto_increment
+nome                 texto       255    Requerido, Único
+Desc                 texto       1000   
+valorUnit            numérico    255    Requerido
+
+----------------------------------------------------------------------
+
+- ItemPedido
+
+id                   numerico    auto_increment
+produto_id            ->          produto.id
+pedido_id             ->          pedido.id
+quantidade           numerico       255    Requerido
+valor                 numerico      255     Required
+
+----------------------------------------------------------------------
 
