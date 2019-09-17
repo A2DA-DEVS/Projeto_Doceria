@@ -1,53 +1,63 @@
 - usuario
-id        numerico    auto_increment
-nome      texto       255
-email     texto       255
-telefone  numerico    255
-username  texto       255
-Senha     texto       255
-confirmacao senha  texto    255
 
+id                   numerico    auto_increment
+nome                 texto       255
+email                texto       255
+telefone             numerico    255
+username             texto       255
+Senha                texto       255
+
+----------------------------------------------------------------------
 
 - cliente
+
 id          numerico    auto_increment
 nome        texto       255
 telefone    numerico    255
 email       texto       255
 endereco     ->         endereco.id
 
+----------------------------------------------------------------------
+
 - endereco
+
 id                   numerico      auto_increment
 rua                  texto         255
 numero da residencia numerico      255
+complemento          texto         255
 bairro               texto         255
 cep                  numerico      255
 cidade                 ->          cidade.id
 
+----------------------------------------------------------------------
+
 - cidade
+
 id      numerico      auto_increment
 nome    texto         255
 estado   ->           estado.id
 
+----------------------------------------------------------------------
+
 - estado 
+
 id      numerico      auto_increment
 nome    texto         255
 
-- status
-id      numerico      auto_increment
-nome    texto         255
+----------------------------------------------------------------------
 
 - pedido
+
 id                  numerico     auto_increment
 numero do pedido    numerico     auto_increment
 data de criacao     data         255
 data hora entrega   data/hora    255
-retirada/entrega     *           *
+retirada            boolean 
 valor do pedido     numerico     255
-forma de pagamento   *           *
-status               ->          status.id
-observacao          texto        255
+forma de pagamento  boolean
+status              boolean
+observacao          texto        1000
 endereco entrega     ->          endereco.id
 criado_por_id        ->          usuario.id
 preparador_por_id    ->          usuario.id
-
 
