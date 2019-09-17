@@ -50,15 +50,15 @@ nome    texto         255 Único, Requerido
 - pedido
 
 id                  numerico     auto_increment
-numero do pedido    numerico     auto_increment
-data de criacao     data         255
-data hora entrega   data/hora    255
-retirada            boolean 
-valor do pedido     numerico     255
-forma de pagamento  boolean
-status              boolean
-observacao          texto        1000
-endereco entrega     ->          endereco.id
-criado_por_id        ->          usuario.id
-preparador_por_id    ->          usuario.id
+numero do pedido    texto        auto_increment
+data de criacao     texto        255    Requerido
+data hora entrega   texto        255    Requerido
+retirada            boolean      255    Requerido
+valor do pedido     numerico     255    Requerido
+forma de pagamento  boolean      255    Requerido
+status              boolean             Requerido
+observacao          texto        1000   
+endereco entrega     ->          endereco.id    Requerido
+criado_por_id        ->          usuario.id     Requerido
+preparador_por_id    ->          usuario.id     Requerido
 
