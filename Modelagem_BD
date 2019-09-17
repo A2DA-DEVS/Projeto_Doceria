@@ -16,7 +16,8 @@ nome        texto       255   Requerido
 cpf         texto       255   Único, Requerido
 telefone    texto       255   Requerido 
 email       texto       255   Único  
-endereco_id     ->      endereco.id
+
+endereco_id      ->     endereco.id
 
 ----------------------------------------------------------------------
 
@@ -28,8 +29,8 @@ numeroResidencia     texto         255    Requerido
 complemento          texto         255    
 bairro               texto         255    Requerido
 cep                  texto         255    
-cidade               texto         255   Requerido
-Estado               texto         255   Requerido
+cidade               texto         255    Requerido
+Estado               texto         255    Requerido
 
 ----------------------------------------------------------------------
 
@@ -38,15 +39,16 @@ Estado               texto         255   Requerido
 id                  numerico     auto_increment
 dataDeCriacao       Data/hora    255      Requerido
 dataEntrega         Data/hora    255    
-retirada            boolean      255    Requerido
-valor do pedido     numerico     255   ???
-forma de pagamento  texto       255    Requerido
-status              texto             Requerido
-observacao          texto        1000   
-enderecoEntrega_id     ->         endereco.id    
-criado_por_id        ->          usuario.id     Requerido
-preparador_por_id    ->          usuario.id
-itenPedido_id         ->         itenPedido.id
+retirada            boolean      255      Requerido
+valorPedido         numerico     255      ???
+formaPagamento      texto        255      Requerido
+status              texto                 Requerido
+observacao          texto        1000     
+
+enderecoEntrega_id      ->      endereco.id    
+criado_por_id      ->      usuario.id     Requerido
+preparador_por_id      ->      usuario.id
+itenPedido_id      ->      itenPedido.id
 
 - Produto
 
@@ -60,10 +62,11 @@ valorUnit            numérico    255    Requerido
 - ItemPedido
 
 id                   numerico    auto_increment
+quantidade           numerico       255    Requerido
+valor                numerico      255     Required
+
 produto_id            ->          produto.id
 pedido_id             ->          pedido.id
-quantidade           numerico       255    Requerido
-valor                 numerico      255     Required
 
 ----------------------------------------------------------------------
 
