@@ -40,15 +40,15 @@ id                  numerico     auto_increment
 dataDeCriacao       Data/hora    255      Requerido
 dataEntrega         Data/hora    255    
 retirada            boolean      255      Requerido
-valorPedido         numerico     255      ???
+valorPedido         numerico     255      Requerido
 formaPagamento      texto        255      Requerido
 status              texto                 Requerido
 observacao          texto        1000     
 
 enderecoEntrega_id      ->      endereco.id    
-criado_por_id      ->      usuario.id     Requerido
-preparador_por_id      ->      usuario.id
-itenPedido_id      ->      itenPedido.id
+criado_por_id           ->      usuario.id     Requerido
+preparador_por_id       ->      usuario.id     Requerido
+itenPedido_id           ->      itenPedido.id  Requerido
 
 - Produto
 
