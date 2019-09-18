@@ -62,8 +62,8 @@ valorUnit            numérico    255    Requerido
 - ItemPedido
 
 id                   numerico    auto_increment
-quantidade           numerico       255    Requerido
-valor                numerico      255     Required
+quantidade           numerico      255    Requerido
+valor                numerico      255    Requirido
 
 produto_id            ->          produto.id
 pedido_id             ->          pedido.id
