@@ -65,8 +65,8 @@ id                   numerico    auto_increment
 quantidade           numerico      255    Requerido
 valor                numerico      255    Requirido
 
-produto_id            ->          produto.id
-pedido_id             ->          pedido.id
+produto_id            ->          produto.id    Requirido
+pedido_id             ->          pedido.id     Requirido
 
 ----------------------------------------------------------------------
 
