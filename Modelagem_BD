@@ -40,7 +40,7 @@ id                  numerico     auto_increment
 dataDeCriacao       Data/hora             Requerido
 dataEntrega         Data/hora      
 retirada            boolean               Requerido
-valorPedido         numerico     255      Requerido
+valorPedido         numerico     255      
 formaPagamento      texto        255      Requerido
 status              texto                 Requerido
 observacao          texto        1000     
