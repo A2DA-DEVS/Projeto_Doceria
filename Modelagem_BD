@@ -48,7 +48,6 @@ observacao          texto        1000
 enderecoEntrega_id      ->      endereco.id    
 criado_por_id           ->      usuario.id     Requerido
 preparador_por_id       ->      usuario.id     Requerido
-itenPedido_id           ->      itenPedido.id  Requerido
 
 - Produto
 
