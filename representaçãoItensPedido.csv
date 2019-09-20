@@ -1,0 +1,3 @@
+Número Pedido;Produtos;quantidade;valor unit;valor total por item;;;;;;Nome do cliente;Data criação do pedido;Observações;Data entrega/retirada;Retirada?
+1;Brigadeiro;1;R$ 5,00;R$ 5,00;;;;;;João;20/09/19;;21/09/19;SIM
+1;Bolo;2;R$ 1,50;R$ 3,00;;;;;;João;20/09/19;;23/09/19;SIM
