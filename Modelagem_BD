@@ -37,18 +37,17 @@ Estado               texto         255    Requerido
 - pedido
 
 id                  numerico     auto_increment
-dataDeCriacao       Data/hora    255      Requerido
-dataEntrega         Data/hora    255    
-retirada            boolean      255      Requerido
-valorPedido         numerico     255      ???
+dataDeCriacao       Data/hora             Requerido
+dataEntrega         Data/hora      
+retirada            boolean               Requerido
+valorPedido         numerico     255      
 formaPagamento      texto        255      Requerido
 status              texto                 Requerido
 observacao          texto        1000     
 
 enderecoEntrega_id      ->      endereco.id    
-criado_por_id      ->      usuario.id     Requerido
-preparador_por_id      ->      usuario.id
-itenPedido_id      ->      itenPedido.id
+criado_por_id           ->      usuario.id     Requerido
+preparador_por_id       ->      usuario.id     Requerido
 
 - Produto
 
@@ -62,11 +61,11 @@ valorUnit            numérico    255    Requerido
 - ItemPedido
 
 id                   numerico    auto_increment
-quantidade           numerico       255    Requerido
-valor                numerico      255     Required
+quantidade           numerico      255    Requerido
+valor                numerico      255    Requirido
 
-produto_id            ->          produto.id
-pedido_id             ->          pedido.id
+produto_id            ->          produto.id    Requirido
+pedido_id             ->          pedido.id     Requirido
 
 ----------------------------------------------------------------------
 
