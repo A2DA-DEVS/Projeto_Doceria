@@ -39,7 +39,7 @@ Estado               texto         255    Requerido
 id                  numerico     auto_increment
 dataDeCriacao       Data/hora             Requerido
 dataEntrega         Data/hora      
-retirada            boolean               Requerido
+entrega             boolean               Requerido
 valorPedido         numerico     255      
 formaPagamento      texto        255      Requerido
 status              texto                 Requerido
