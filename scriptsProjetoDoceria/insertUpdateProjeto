@@ -1,0 +1,155 @@
+INSERT INTO customer (
+	name,
+	cpf,
+	telephone,
+	email,
+	address_id
+) 
+VALUES (
+	'João',
+	'133331330',
+	'3312-0898',
+	'email@teste.com',
+	1
+);
+
+UPDATE customer 
+SET 
+	name = 'Pedro',
+	cpf = '13331331',
+	telephone = '3312-0993',
+	email = 'pedro@teste.com'
+where id = 1;
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+INSERT INTO product (
+	name,
+	description,
+	unitaryValue
+)
+VALUES (
+	'Brigadeiro de banana',
+	'Brigadeiro de chocolate',1.25
+);
+
+UPDATE product 
+SET 
+	name = 'Brigadeiro de castanha',
+	description = 'Brigadeiro castanha',
+	unitaryValue = 1.50 
+where id = 1;
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+INSERT INTO address (
+	street,
+	houseNumber,
+	complement,
+	neighborhood
+	zipCode,
+	city,
+	state
+)
+VALUES (
+	'Rua armelindo',
+	'14',
+	'Apto 15',
+	'Villa Maria',
+	'133311332',
+	'Itu',
+	'SP'
+);
+
+UPDATE address 
+	SET street = 'Rua alves',
+	houseNumber = '5',
+	complement = '',
+	neighborhood = 'Villa Osorio',
+	zipCode = '133313131',
+	city = 'São paulo',
+	state = 'SP' 
+where id = 1;
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+INSERT INTO purchaseOrder (
+	createDate,
+	deliveryDate,
+	delivery,
+	orderValue,
+	formOfPayment,
+	status,
+	obs,
+	deliveryAddress_id,
+	createBy_id,
+	preparedBy_id,
+	customer_id
+)
+VALUES (
+	'2019-09-05',
+	'2019-09-15',
+	1,
+	5.0,
+	'Dinheiro',
+	'Nova',
+	'Sem chocolate amargo',
+	1,
+	1,
+	1
+);
+
+UPDATE purchaseOrder 
+	SET createDate = '2020-09-05',
+	deliveryDate = '2021-10-05',
+	delivery = 1,
+	orderValue = 15,
+	formOfPayment = 'Cartão',	
+	status = 'Em produção',
+	obs ='',
+	createdBy_id = 2,
+	preparedBy_id = 3,
+	customer_id = 1
+where id = 1);
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+INSERT INTO orderedItem (
+	amount,
+	totalValue,
+	product_id,
+	purchaseOrder_id
+)
+VALUES (
+	3,
+	4.50,
+	'1',
+	'1'
+);
+
+UPDATE orderedItem SET (
+	DEFAULT,
+	amount = 3,
+	totalValue = '1',
+	product_id = '2',
+	purchaseOrder_id = '1'
+);
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+INSERT INTO user (
+	name,
+	email,
+	telephone,
+	userName,
+	password
+) 
+VALUES (
+	'${name}',
+	'${email}',
+	'${telephone}',
+	'${userName}',
+	'${password}'
+);
+
+
