@@ -24,6 +24,7 @@ def updateAddress = { String street, String houseNumber, String complement, Stri
 
 // println insertAddress("Rua Epaminondas", "41", "Complemento x", "Villa Aurora", "12323112", "indaiatuba", "Santa Catarina")
 // println updateAddress("Rua Evandro moraees", "45", "Complemento x", "Villa Aurora", "12323112", "indaiatuba", "Santa Catarina", 5)
+
 /* ---------------------------------------------------------------------------------------------- */
 
 def insertCustomer = { String name, String cpf, String telephone, String email, int address_id ->
@@ -38,6 +39,7 @@ def updateCustomer = { String name, String cpf, String telephone, String email, 
 
 // println insertCustomer('João', '133331330', '3312-0898', 'email@teste.com', 1)
 // println updateCustomer('João Vitor', '133331330', '3312-0898', 'email@teste.com', 1, 3)
+
 /* ---------------------------------------------------------------------------------------------- */
 
 def insertOrderedItem = { int amount, double totalValue, int product_id, int purchaseOrder_id ->
@@ -52,6 +54,7 @@ def updateOrderedItem = { int amount, double totalValue, int product_id, int pur
 
 // println insertOrderedItem(3, 4.50, 1, 1)
 // println updateOrderedItem(3, 4.50, 1, 1, 3)
+
 /* ---------------------------------------------------------------------------------------------- */
 
 def insertUser = { String name, String email, String telephone, String userName, String password ->
@@ -64,15 +67,16 @@ def updateUser = { String name, String email, String telephone, String userName,
 }
 // println insertUser('jbTeste', 'jb@teste', '1231321', 'jbarcella', '12312321')
 // println updateUser('jbTeste123', 'jb@teste', '1231321', 'jbarcella', '12312321', 1)
+
 /* ---------------------------------------------------------------------------------------------- */
 
 def insertPurchaseOrder = { String createDate, String deliveryDate, boolean delivery, double orderValue, String formOfPayment, String status, String obs, int createdBy_id, int preparedBy_id, int customer_id ->
-    String result = "insert INTO purchaseOrder (createDate, deliveryDate, delivery, orderValue, formOfPayment, status, obs, deliveryAddress_id, createBy_id, preparedBy_id, customer_id) VALUES ('${createDate}', '${deliveryDate}', ${delivery}, ${orderValue}, '${formOfPayment}', '${status}', '${obs}', '${createdBy_id}', '${preparedBy_id}', '${customer_id}');"
+    String result = "insert INTO purchaseOrder (createDate, deliveryDate, delivery, orderValue, formOfPayment, status, obs, createBy_id, preparedBy_id, customer_id) VALUES ('${createDate}', '${deliveryDate}', ${delivery}, ${orderValue}, '${formOfPayment}', '${status}', '${obs}', '${createdBy_id}', '${preparedBy_id}', '${customer_id}');"
     return result
 }
 
 def updatePurchaseOrder = { String createDate, String deliveryDate, boolean delivery, double orderValue, String formOfPayment, String status, String obs, int createdBy_id, int preparedBy_id, int customer_id, int id ->
-    String result = "update purchaseOrder SET createDate = '${createDate}', deliveryDate = '${deliveryDate}', delivery = ${delivery}, orderValue = ${orderValue}, formOfPayment = '${formOfPayment}', status = '${status}', obs = '${obs}', createdBy_id = '${createdBy_id}', preparedBy_id = '${preparedBy_id}', customer_id = ${customer_id} where id = ${id});"
+    String result = "update purchaseOrder SET createDate = '${createDate}', deliveryDate = '${deliveryDate}', delivery = ${delivery}, orderValue = ${orderValue}, formOfPayment = '${formOfPayment}', status = '${status}', obs = '${obs}', createBy_id = '${createdBy_id}', preparedBy_id = '${preparedBy_id}', customer_id = ${customer_id} where id = ${id};"
     return result
 }
 
