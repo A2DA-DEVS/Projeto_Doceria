@@ -52,8 +52,8 @@ def updateOrderedItem = { int amount, double totalValue, int product_id, int pur
     return result
 }
 
-// println insertOrderedItem(3, 4.50, 1, 1)
-// println updateOrderedItem(3, 4.50, 1, 1, 3)
+println insertOrderedItem(3, 4.50, 1, 1)
+println updateOrderedItem(3, 4.50, 1, 1, 3)
 
 /* ---------------------------------------------------------------------------------------------- */
 
@@ -80,5 +80,5 @@ def updatePurchaseOrder = { String createDate, String deliveryDate, boolean deli
     return result
 }
 
-println insertPurchaseOrder('26-09-2019', '10-10-2020', true, 10.5, 'Cartao', 'Nova', 'Observaçao', 1, 2, 3)
-println updatePurchaseOrder('28-10-2019', '29-10-2019', true, 10.5, 'Cartao', 'Nova', 'Observaçao', 1, 2, 3, 3)
+// println insertPurchaseOrder('26-09-2019', '10-10-2020', true, 10.5, 'Cartao', 'Nova', 'Observaçao', 1, 2, 3)
+// println updatePurchaseOrder('28-10-2019', '29-10-2019', true, 10.5, 'Cartao', 'Nova', 'Observaçao', 1, 2, 3, 3)
