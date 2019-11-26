@@ -32,8 +32,18 @@ CREATE TABLE `address` (
   `city` varchar(255) NOT NULL,
   `state` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `address`
+--
+
+LOCK TABLES `address` WRITE;
+/*!40000 ALTER TABLE `address` DISABLE KEYS */;
+INSERT INTO `address` VALUES (6,'Rua armelindo','14','Apto 15','Villa Maria','133311332','Itu','SP');
+/*!40000 ALTER TABLE `address` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `customer`
@@ -54,8 +64,18 @@ CREATE TABLE `customer` (
   UNIQUE KEY `email` (`email`),
   KEY `fk_customerAddress` (`address_id`),
   CONSTRAINT `fk_customerAddress` FOREIGN KEY (`address_id`) REFERENCES `address` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customer`
+--
+
+LOCK TABLES `customer` WRITE;
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+INSERT INTO `customer` VALUES (6,'Adriano','12345678910','3312-0898','email@teste.com',NULL),(7,'José','10987654321','3312-4312','email@notteste.com',6);
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `orderedItem`
@@ -75,8 +95,17 @@ CREATE TABLE `orderedItem` (
   KEY `fk_orderedItemOrderId` (`purchaseOrder_id`),
   CONSTRAINT `fk_orderedItemOrderId` FOREIGN KEY (`purchaseOrder_id`) REFERENCES `purchaseOrder` (`id`),
   CONSTRAINT `fk_orderedItemProduct` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orderedItem`
+--
+
+LOCK TABLES `orderedItem` WRITE;
+/*!40000 ALTER TABLE `orderedItem` DISABLE KEYS */;
+/*!40000 ALTER TABLE `orderedItem` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `product`
@@ -92,8 +121,18 @@ CREATE TABLE `product` (
   `unitaryValue` double NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product`
+--
+
+LOCK TABLES `product` WRITE;
+/*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` VALUES (4,'Bolo de abacaxi','Maravilhoso bolo de abacaxi',5.5),(5,'Bolo de banana','Maravilhoso bolo de banana',4.4),(6,'Mini coxinha','Maravilhosa mini coxinha',2.2),(7,'Coxinha','Maravilhosa coxinha',4.4);
+/*!40000 ALTER TABLE `product` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `purchaseOrder`
@@ -122,8 +161,17 @@ CREATE TABLE `purchaseOrder` (
   CONSTRAINT `fk_purchaseOrdemCustomer_id` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`),
   CONSTRAINT `fk_purchaseOrderCreateBy` FOREIGN KEY (`createBy_id`) REFERENCES `user` (`id`),
   CONSTRAINT `fk_purchaseOrderDeliveryAdress` FOREIGN KEY (`deliveryAdress_id`) REFERENCES `address` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `purchaseOrder`
+--
+
+LOCK TABLES `purchaseOrder` WRITE;
+/*!40000 ALTER TABLE `purchaseOrder` DISABLE KEYS */;
+/*!40000 ALTER TABLE `purchaseOrder` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `user`
@@ -142,8 +190,17 @@ CREATE TABLE `user` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `userName` (`userName`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -154,4 +211,4 @@ CREATE TABLE `user` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-27 14:53:02
+-- Dump completed on 2019-10-07 11:28:16

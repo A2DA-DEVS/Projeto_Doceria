@@ -1,3 +1,21 @@
+
+INSERT INTO user (
+	name,
+	email,
+	telephone,
+	userName,
+	password
+)
+VALUES (
+	'Christoper Silva',
+	'csilva@hotmail.com',
+	'19995554019',
+	'csilva',
+	'csilvinha123'
+);
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
 INSERT INTO customer (
 	name,
 	cpf,
@@ -23,25 +41,6 @@ where id = 1;
 
 /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-INSERT INTO product (
-	name,
-	description,
-	unitaryValue
-)
-VALUES (
-	'Brigadeiro de banana',
-	'Brigadeiro de chocolate',1.25
-);
-
-UPDATE product 
-SET 
-	name = 'Brigadeiro de castanha',
-	description = 'Brigadeiro castanha',
-	unitaryValue = 1.50 
-where id = 1;
-
-/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-
 INSERT INTO address (
 	street,
 	houseNumber,
@@ -61,14 +60,33 @@ VALUES (
 	'SP'
 );
 
-UPDATE address 
+UPDATE address
 	SET street = 'Rua alves',
 	houseNumber = '5',
 	complement = '',
 	neighborhood = 'Villa Osorio',
 	zipCode = '133313131',
 	city = 'São paulo',
-	state = 'SP' 
+	state = 'SP'
+where id = 1;
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+INSERT INTO product (
+	name,
+	description,
+	unitaryValue
+)
+VALUES (
+	'Brigadeiro de banana',
+	'Brigadeiro de chocolate',1.25
+);
+
+UPDATE product
+SET
+	name = 'Brigadeiro de castanha',
+	description = 'Brigadeiro castanha',
+	unitaryValue = 1.50
 where id = 1;
 
 /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -137,19 +155,5 @@ UPDATE orderedItem SET (
 
 /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-INSERT INTO user (
-	name,
-	email,
-	telephone,
-	userName,
-	password
-) 
-VALUES (
-	'${name}',
-	'${email}',
-	'${telephone}',
-	'${userName}',
-	'${password}'
-);
 
 

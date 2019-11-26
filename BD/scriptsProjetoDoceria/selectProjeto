@@ -1,0 +1,38 @@
+USE projetoDoceria;
+
+SELECT
+	id,
+    unitaryValue,
+    unitaryValue * 2 as 'Dobro do valor',
+    unitaryValue / 100 * 10 as '10% do valor'
+FROM
+	product;
+
+
+UPDATE
+	product
+SET
+	unitaryValue = unitaryValue + unitaryValue / 100 * 10
+WHERE
+	id = 6;
+
+
+
+
+# nome do cliente e demais dados do endereço
+
+SELECT
+	c.name as 'Nome do cliente',
+    a.street as 'Rua',
+    a.houseNumber as 'Número da rua',
+    a.complement as 'Complemento',
+    a.neighborhood as 'Bairro',
+    a.zipCode as 'Código postal',
+    a.city as 'Cidade',
+    a.state as 'Estado'
+FROM
+	customer as c
+JOIN address as a
+	on c.address_id = a.id;
+
+
